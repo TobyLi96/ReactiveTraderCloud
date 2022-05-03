@@ -21,7 +21,7 @@
     }
   },
   "runtime": {
-    "version": "17.85.53.10",
+    "version": "25.100.69.8",
     "arguments": "--remote-debugging-port=9091"
   },
   "services": [
