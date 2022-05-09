@@ -2,13 +2,13 @@
   "platform": {
     "uuid": "reactive-trader-<ENV_NAME>",
     "name": "Reactive Trader®<ENV_SUFFIX>",
-    "applicationIcon": "<BASE_URL>/static/media/reactive-trader-icon-256x256.png",
+    "icon": "<BASE_URL>/static/media/reactive-trader-icon-256x256.png",
     "url": "<BASE_URL>",
-    "fdc3Api": true,
     "defaultWindowOptions": {
       "contextMenu": true,
+      "fdc3InteropApi": "1.2",
       "frame": false,
-      "applicationIcon": "<BASE_URL>/static/media/reactive-trader-icon-256x256.png",
+      "icon": "<BASE_URL>/static/media/reactive-trader-icon-256x256.png",
       "url": "<BASE_URL>/openfin-sub-window-frame"
     }
   },
@@ -39,7 +39,7 @@
   "snapshot": {
     "windows": [
       {
-        "applicationIcon": "<BASE_URL>/static/media/reactive-trader-icon-256x256.png",
+        "icon": "<BASE_URL>/static/media/reactive-trader-icon-256x256.png",
         "autoShow": true,
         "defaultWidth": 1280,
         "defaultHeight": 900,

@@ -2,9 +2,10 @@
   "platform": {
     "uuid": "reactive-launcher-<ENV_NAME>",
     "name": "Reactive Launcher<ENV_SUFFIX>",
-    "applicationIcon": "<BASE_URL>/static/media/adaptive-icon-256x256.png",
+    "icon": "<BASE_URL>/static/media/adaptive-icon-256x256.png",
     "defaultWindowOptions": {
       "contextMenu": true,
+      "fdc3InteropApi": "1.2",
       "frame": false,
       "url": "<BASE_URL>/openfin-sub-window-frame",
       "permissions": {
@@ -13,7 +14,6 @@
         }
       }
     },
-    "fdc3Api": true,
     "permissions": {
       "System": {
         "launchExternalProcess": true
