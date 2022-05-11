@@ -1,3 +1,4 @@
+import { useEffect } from "react"
 import { broadcast } from "@finos/fdc3"
 import styled, { css } from "styled-components"
 import { Trade, TradeStatus } from "@/services/trades"
@@ -145,6 +146,15 @@ export const TradesGrid: React.FC = () => {
   const trades = useTableTrades()
   const highlightedRow = useTradeRowHighlight()
 
+  useEffect(() => {
+    if (window.fin) {
+      // @ts-ignore
+      fin.me.interop.joinContextGroup("green").catch((e) => {
+        throw e
+      })
+    }
+  }, [])
+
   const tryBroadcastContext = (symbol: string) => {
     const context = {
       type: "fdc3.instrument",
@@ -155,7 +165,9 @@ export const TradesGrid: React.FC = () => {
       broadcast(context)
     } else if (window.fin) {
       // @ts-ignore
-      fin.me.interop.setContext(context)
+      fin.me.interop.setContext(context).catch((e) => {
+        throw e
+      })
     }
   }
 
