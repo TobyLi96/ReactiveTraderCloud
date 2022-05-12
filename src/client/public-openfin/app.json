@@ -5,6 +5,17 @@
     "icon": "<BASE_URL>/static/media/reactive-trader-icon-256x256.png",
     "url": "<BASE_URL>",
     "autoShow": false,
+    "interopBrokerConfiguration": {
+      "contextGroups": [
+        {
+          "id": "green",
+          "displayMetadata": {
+            "color": "#00CC88",
+            "name": "green"
+          }
+        }
+      ]
+    },
     "defaultWindowOptions": {
       "contextMenu": true,
       "fdc3InteropApi": "1.2",
