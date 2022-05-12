@@ -1,5 +1,5 @@
 import { useEffect } from "react"
-import { broadcast } from "@finos/fdc3"
+import { broadcast, fdc3Ready, joinChannel } from "@finos/fdc3"
 import styled, { css } from "styled-components"
 import { Trade, TradeStatus } from "@/services/trades"
 import {
@@ -145,14 +145,15 @@ export const TradesGridInner: React.FC<{
 export const TradesGrid: React.FC = () => {
   const trades = useTableTrades()
   const highlightedRow = useTradeRowHighlight()
+  const FDC_TIMEOUT = 2000
 
   useEffect(() => {
-    if (window.fin) {
-      // @ts-ignore
-      fin.me.interop.joinContextGroup("green").catch((e) => {
-        throw e
-      })
-    }
+    fdc3Ready(FDC_TIMEOUT)
+      .then(
+        () => joinChannel("green"),
+        (e) => console.info(e, "FDC3 API not present"),
+      )
+      .catch((e) => console.error(e, "Failed to join FDC3 interop channel "))
   }, [])
 
   const tryBroadcastContext = (symbol: string) => {
@@ -161,14 +162,7 @@ export const TradesGrid: React.FC = () => {
       id: { ticker: symbol },
     }
 
-    if (window.fdc3) {
-      broadcast(context)
-    } else if (window.fin) {
-      // @ts-ignore
-      fin.me.interop.setContext(context).catch((e) => {
-        throw e
-      })
-    }
+    fdc3Ready(FDC_TIMEOUT).then(() => broadcast(context))
   }
 
   return (
