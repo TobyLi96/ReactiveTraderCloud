@@ -151,7 +151,7 @@ export const TradesGrid: React.FC = () => {
     fdc3Ready(FDC_TIMEOUT)
       .then(
         () => joinChannel("green"),
-        (e) => console.info(e, "FDC3 API not present"),
+        () => console.info("FDC3 API not present"),
       )
       .catch((e) => console.error(e, "Failed to join FDC3 interop channel "))
   }, [])
