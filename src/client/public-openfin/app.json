@@ -11,6 +11,9 @@
       "frame": false,
       "icon": "<BASE_URL>/static/media/reactive-trader-icon-256x256.png",
       "url": "<BASE_URL>/openfin-sub-window-frame"
+    },
+    "defaultViewOptions": {
+      "fdc3InteropApi": "1.2"
     }
   },
   "runtime": {
