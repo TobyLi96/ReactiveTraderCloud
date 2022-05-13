@@ -1,6 +1,6 @@
 {
   "platform": {
-    "uuid": "reactive-trader-<ENV_NAME>",
+    "uuid": "reactive-launcher-<ENV_NAME>",
     "name": "Reactive Launcher<ENV_SUFFIX>",
     "icon": "<BASE_URL>/static/media/adaptive-icon-256x256.png",
     "defaultWindowOptions": {
